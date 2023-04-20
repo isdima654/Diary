@@ -19,4 +19,10 @@
     <ProjectReference Include="..\Diary_Models\Diary_Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="db_settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
