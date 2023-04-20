@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Diary_Models.Models
 {
-    public class Notes
+    public class Note: IEntity 
     {
         public Guid Id { get; set; }
         [Required] [StringLength(50)] public string Name { get; set; }

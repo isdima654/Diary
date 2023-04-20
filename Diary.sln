@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diary_Models", "Diary_Models\Diary_Models.csproj", "{796DD24B-D02C-4E56-AF1D-F793F5C1F5F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diary_Models", "Diary_Models\Diary_Models.csproj", "{796DD24B-D02C-4E56-AF1D-F793F5C1F5F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diary_dblayer", "Diary_dblayer\Diary_dblayer.csproj", "{4CA87A15-8C40-4B3B-BCD1-B27E1932A550}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{796DD24B-D02C-4E56-AF1D-F793F5C1F5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{796DD24B-D02C-4E56-AF1D-F793F5C1F5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{796DD24B-D02C-4E56-AF1D-F793F5C1F5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA87A15-8C40-4B3B-BCD1-B27E1932A550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA87A15-8C40-4B3B-BCD1-B27E1932A550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA87A15-8C40-4B3B-BCD1-B27E1932A550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA87A15-8C40-4B3B-BCD1-B27E1932A550}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
