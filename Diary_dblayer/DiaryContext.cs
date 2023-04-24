@@ -12,13 +12,15 @@ namespace Diary_dblayer
 {
     internal class DiaryContext: DbContext
     {
+        private const string settingsPath = "db_settings.json";
+
         public DbSet <User> Users { get; set; }
         public DbSet <Note> Notes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!File.Exists("db_settings.json"))
+            if (!File.Exists(settingsPath))
                 throw new FileNotFoundException("Config file is not found!");
-            var json = File.ReadAllText("db_setting.json");
+            var json = File.ReadAllText(settingsPath);
             var jObj = JObject.Parse(json);
             var connectionString = jObj["connectionString"]?.ToString() ??
                 throw new KeyNotFoundException("connectionString if missing.");
