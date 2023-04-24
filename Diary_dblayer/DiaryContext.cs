@@ -42,3 +42,4 @@ namespace Diary_dblayer
         }
     }
 }
+//"connectionString": "Server=31.31.196.234;Database=u0588704_3pmi_br3;User Id=u0588704_3pmi_br3;Password=qwerty123!q1!;"
