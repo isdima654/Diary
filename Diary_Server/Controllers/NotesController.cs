@@ -27,8 +27,10 @@ namespace Diary_Server.Controllers
             });
 
         /// <summary>
-        /// notes title id
+        /// Note by Id
         /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetById(Guid id)
@@ -48,6 +50,11 @@ namespace Diary_Server.Controllers
                 });
         }
 
+        /// <summary>
+        /// Add or update note info
+        /// </summary>
+        /// <param name="note"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult PostNote([FromBody] Note note)
         {

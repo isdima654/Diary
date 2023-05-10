@@ -29,8 +29,10 @@ namespace Diary_Server.Controllers
             });
 
         /// <summary>
-        /// users title id
+        /// Users by Id
         /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("{id}")]
         public IActionResult GetById(Guid id)
@@ -50,10 +52,14 @@ namespace Diary_Server.Controllers
                 });
         }
 
+        /// <summary>
+        /// Employees on the project
+        /// </summary>
+        [HttpGet]
+        [Route("{id}/employees")]
         public IActionResult GetDate(DateTime date)
         {
 
-        }
-
+        }    
     }
 }
