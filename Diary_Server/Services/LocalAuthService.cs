@@ -31,7 +31,7 @@ namespace Diary_Server.Services
 
         public Guid Auth(string login, string password)
         {
-            var passhash = Extentions.ComputeSHA256(password);
+            var passhash = Extensions.ComputeSHA256(password);
             var potentialUser = _db.GetUsers(x => x.Login == login && x.Password == passhash).FirstOrDefault() ?? throw new Exception("User is not found");
 
             var Token = Guid.NewGuid();
@@ -47,7 +47,9 @@ namespace Diary_Server.Services
         public User GetUser(Guid token)
         {
             CleanSessions();
-            return Sessions.FirstOrDefault(x => x.Token == token)?.User ?? throw new Exception("Session is not found");
+            var session = Sessions.FirstOrDefault(x => x.Token == token) ?? throw new Exception("Session is not found");
+            session.LastOp = DateTime.Now;
+            return session.User;
         }
     }
 }

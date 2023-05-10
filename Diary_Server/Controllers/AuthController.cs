@@ -74,7 +74,7 @@ namespace Diary_Server.Conntrolers
                 User potentialUser = new()
                 {
                     Login = json["login"]?.ToString() ?? throw new Exception("Login is missing"),
-                    Password = Extentions.ComputeSHA256(json["password"]?.ToString() ?? throw new Exception("Password is missing")),
+                    Password = Extensions.ComputeSHA256(json["password"]?.ToString() ?? throw new Exception("Password is missing")),
                     Name = json["name"]?.ToString() ?? throw new Exception("Name is missing"),
                 };
                 _db.AddOrUpdate(potentialUser);

@@ -11,5 +11,7 @@ namespace Diary_Models.Models
         [Required] [StringLength(100)]public string Name { get; set; }
         [Required] [StringLength(100)] public string Login { get; set; }
         [Required] [StringLength(100)] public string Password { get; set; }
+
+        public virtual ICollection<Note> Notes { get; set; }
     }
 }

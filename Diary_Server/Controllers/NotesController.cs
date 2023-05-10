@@ -1,11 +1,9 @@
 ﻿using Diary_dblayer;
+using Diary_Models.Models;
 using Diary_Server.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Diary_Server.Controllers
 {
@@ -50,29 +48,34 @@ namespace Diary_Server.Controllers
                 });
         }
 
-        public IActionResult 
-            
-
-
-
-
-
-
-
-        /*public IActionResult PostNotesTitle([FromBody] NotesTitle notesTitle)
+        [HttpPost]
+        public IActionResult PostNote([FromBody] Note note)
         {
-            if (LocalAuthService.GetInstance().GetUser(Token) == User.)
-                return Unauthorized(new
+            try
+            {
+                User user;
+                if ((user = LocalAuthService.GetInstance().GetUser(Token)) is null)
+                    return Unauthorized(new
+                    {
+                        status = "fail",
+                        message = "Session is not valid"
+                    });
+                note.User = user;
+                _db.AddOrUpdate(note);
+                return Ok(new
+                {
+                    status = "ok",
+                    id = note.Id
+                });
+            }
+            catch (Exception E)
+            {
+                return BadRequest(new
                 {
                     status = "fail",
-                    message = "You have no rights for that action."
+                    message = E.Message
                 });
-            _db.AddOrUpdate(notesTitle);
-            return Ok(new
-            {
-                status = "ok",
-                id = notesTitle.Id
-            });
-        }*/
+            }
+        }
     }
 }

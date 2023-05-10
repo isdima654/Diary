@@ -50,20 +50,10 @@ namespace Diary_Server.Controllers
                 });
         }
 
-        public IActionResult PostUsersTitle([FromBody] UserTitle userTitle)
+        public IActionResult GetDate(DateTime date)
         {
-            if (LocalAuthService.GetInstance().GetUser(Token) == User.user)
-                return Unauthorized(new
-                {
-                    status = "fail",
-                    message = "You have no rights for that action."
-                });
-            _db.AddOrUpdate(userTitle);
-            return Ok(new
-            {
-                status = "ok",
-                id = userTitle.Id
-            });
+
         }
+
     }
 }

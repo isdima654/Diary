@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Diary_Server
 {
-    internal class Extentions
+    internal class Extensions
     {
         public static string ComputeSHA256(string rawData)
         {
