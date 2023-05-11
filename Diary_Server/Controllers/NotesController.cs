@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace Diary_Server.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
@@ -84,5 +87,75 @@ namespace Diary_Server.Controllers
                 });
             }
         }
+       /// <summary>
+       /// sort for date
+       /// </summary>
+       /// <param name="start"></param>
+       /// <param name="end"></param>
+       /// <returns></returns>
+        [HttpGet]
+        [Route("filters/date/{start}-{end}")]
+        public IActionResult GetDate([FromRoute] DateTime start,[FromRoute] DateTime end)
+        {
+            User user;
+            if ((user = LocalAuthService.GetInstance().GetUser(Token)) is null)
+                return Unauthorized(new
+                {
+                    status = "fail",
+                    message = "Session is not valid"
+                });
+            var notes = user.Notes.Where(x => (x.Date > start) && (x.Date < end));
+            return Ok(new
+            {
+                status = "ok",
+                notes
+            });
+        }
+
+        /// <summary>
+        /// sort for status
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("filters/status")]
+        public IActionResult GetStatus()
+        {
+            User user;
+            if ((user = LocalAuthService.GetInstance().GetUser(Token)) is null)
+                return Unauthorized(new
+                {
+                    status = "fail",
+                    message = "Session is not valid"
+                });
+            var marks = user.Notes.Where(x => x.Status != null);
+            return Ok(new
+            {
+                status = "ok",
+                marks
+            });
+        }
+        /// <summary>
+        /// sort for repeat
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("filters/repeat")]
+        public IActionResult GetRepeat()
+        {
+            User user;
+            if ((user = LocalAuthService.GetInstance().GetUser(Token)) is null)
+                return Unauthorized(new
+                {
+                    status = "fail",
+                    message = "Session is not valid"
+                });
+            var reset = user.Notes.Where(x => x.Repeat != null);
+            return Ok(new
+            {
+                status = "ok",
+                reset
+            });
+        }
+
     }
 }

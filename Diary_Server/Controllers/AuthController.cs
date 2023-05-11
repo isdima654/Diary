@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Diary_Server.Conntrolers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -20,6 +23,12 @@ namespace Diary_Server.Conntrolers
         private Guid Token => Guid.Parse(Request.Headers["Token"] != string.Empty ?
                                             Request.Headers["Token"]! : Guid.Empty.ToString());
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         [HttpPost]
         // авторизация
         public IActionResult AuthPost(string login, string password)
@@ -43,6 +52,10 @@ namespace Diary_Server.Conntrolers
             }
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         // получение пользователя по токену
         public IActionResult GetUserInfo()
         {
@@ -64,6 +77,11 @@ namespace Diary_Server.Conntrolers
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="json"></param>
+        /// <returns></returns>
         //регистрация пользователя
         public IActionResult SignUp([FromBody] JObject json)
         {

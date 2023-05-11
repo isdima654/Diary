@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Diary_Server.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -52,14 +55,6 @@ namespace Diary_Server.Controllers
                 });
         }
 
-        /// <summary>
-        /// Employees on the project
-        /// </summary>
-        [HttpGet]
-        [Route("{id}/employees")]
-        public IActionResult GetDate(DateTime date)
-        {
-
-        }    
+ 
     }
 }
