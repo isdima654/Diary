@@ -528,3 +528,4 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,aspnetcore
 /Diary_dblayer/db_settings.json
+/Diary_Server/db_settings.json

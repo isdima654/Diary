@@ -23,7 +23,7 @@ namespace Diary_Server.Controllers
         /// <summary>
         /// All 
         /// </summary>
-
+        [HttpGet]
         public IActionResult GetAll() =>
             Ok(new
             {
