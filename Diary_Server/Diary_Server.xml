@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Diary_Server</name>
+    </assembly>
+    <members>
+        <member name="T:Diary_Server.Conntrolers.AuthController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Conntrolers.AuthController.AuthPost(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="login"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Diary_Server.Conntrolers.AuthController.GetUserInfo">
+            <summary>
+            получение пользователя по токену
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary_Server.Conntrolers.AuthController.SignUp(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            регистрация пользователя
+            </summary>
+            <param name="json">should contain name, login, password</param>
+            <returns></returns>
+        </member>
+        <member name="T:Diary_Server.Controllers.NotesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Controllers.NotesController.GetAll">
+            <summary>
+            All 
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Controllers.NotesController.GetById(System.Guid)">
+            <summary>
+            Note by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Diary_Server.Controllers.NotesController.PostNote(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add or update note info
+            </summary>
+            <param name="note"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Diary_Server.Controllers.NotesController.GetDate(System.DateTime,System.DateTime)">
+            <summary>
+            sort for date
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Diary_Server.Controllers.NotesController.GetStatus">
+            <summary>
+            sort for status
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Diary_Server.Controllers.NotesController.GetRepeat">
+            <summary>
+            sort for repeat
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Diary_Server.Controllers.UsersController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Controllers.UsersController.GetAll">
+            <summary>
+            All 
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Controllers.UsersController.GetById(System.Guid)">
+            <summary>
+            Users by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

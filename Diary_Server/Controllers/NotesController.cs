@@ -2,6 +2,7 @@
 using Diary_Models.Models;
 using Diary_Server.Services;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Linq;
 
@@ -59,10 +60,11 @@ namespace Diary_Server.Controllers
         /// <param name="note"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult PostNote([FromBody] Note note)
+        public IActionResult PostNote([FromBody] JObject noteJson)
         {
             try
             {
+                Note note = noteJson.ToObject<Note>();
                 User user;
                 if ((user = LocalAuthService.GetInstance().GetUser(Token)) is null)
                     return Unauthorized(new
