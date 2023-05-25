@@ -4,14 +4,16 @@ using Diary_dblayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Diary_dblayer.Migrations
 {
     [DbContext(typeof(DiaryContext))]
-    partial class DiaryContextModelSnapshot : ModelSnapshot
+    [Migration("20230522063659_UserFix2")]
+    partial class UserFix2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

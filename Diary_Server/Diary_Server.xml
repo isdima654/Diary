@@ -19,15 +19,15 @@
         </member>
         <member name="M:Diary_Server.Conntrolers.AuthController.GetUserInfo">
             <summary>
-            
+            получение пользователя по токену
             </summary>
             <returns></returns>
         </member>
         <member name="M:Diary_Server.Conntrolers.AuthController.SignUp(Newtonsoft.Json.Linq.JObject)">
             <summary>
-            
+            регистрация пользователя
             </summary>
-            <param name="json"></param>
+            <param name="json">should contain name, login, password</param>
             <returns></returns>
         </member>
         <member name="T:Diary_Server.Controllers.NotesController">
@@ -47,7 +47,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:Diary_Server.Controllers.NotesController.PostNote(Diary_Models.Models.Note)">
+        <member name="M:Diary_Server.Controllers.NotesController.PostNote(Newtonsoft.Json.Linq.JObject)">
             <summary>
             Add or update note info
             </summary>

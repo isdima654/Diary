@@ -23,7 +23,7 @@ namespace Diary_Server.Controllers
         /// <summary>
         /// All 
         /// </summary>
-
+        [HttpGet]
         public IActionResult GetAll() =>
             Ok(new
             {
@@ -40,12 +40,13 @@ namespace Diary_Server.Controllers
         [Route("{id}")]
         public IActionResult GetById(Guid id)
         {
-            var potentialTitle = _db.GetUsers(x => x.Id == id).FirstOrDefault();
-            if (potentialTitle is not null)
+            var potentialUser = _db.GetUsers(x => x.Id == id).FirstOrDefault();
+            if (potentialUser is not null)
                 return Ok(new
                 {
                     status = "ok",
-                    notestitles = potentialTitle
+                    user = potentialUser,
+                    notes = potentialUser.Notes
                 });
             else
                 return NotFound(new

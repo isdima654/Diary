@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -16,6 +17,6 @@ namespace Diary_Models.Models
         public string Status { get; set; }
         public string Repeat { get; set; }
         
-        public virtual User User { get; set; }
+        [JsonIgnore] public virtual User User { get; set; }
     }
 }

@@ -51,12 +51,12 @@ namespace Diary_Server.Conntrolers
                 });
             }
         }
-        
+
         /// <summary>
-        /// 
+        /// получение пользователя по токену
         /// </summary>
         /// <returns></returns>
-        // получение пользователя по токену
+        [HttpPost][Route("user")]
         public IActionResult GetUserInfo()
         {
             try
@@ -78,11 +78,11 @@ namespace Diary_Server.Conntrolers
         }
 
         /// <summary>
-        /// 
+        /// регистрация пользователя
         /// </summary>
-        /// <param name="json"></param>
+        /// <param name="json">should contain name, login, password</param>
         /// <returns></returns>
-        //регистрация пользователя
+        [HttpPost] [Route("signup")] 
         public IActionResult SignUp([FromBody] JObject json)
         {
             try

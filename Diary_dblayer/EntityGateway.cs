@@ -9,7 +9,7 @@ namespace Diary_dblayer
 {
     public partial class EntityGateway
     {
-        internal DiaryContext Context { get; set; }
+        internal static DiaryContext Context { get; set; } = new DiaryContext();
 
         public void AddOrUpdate (params IEntity[] entities)
         {
