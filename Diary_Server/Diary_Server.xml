@@ -56,7 +56,7 @@
         </member>
         <member name="M:Diary_Server.Controllers.NotesController.GetDate(System.DateTime,System.DateTime)">
             <summary>
-            sort for date
+            sort for date Japon = M.D.Y.
             </summary>
             <param name="start"></param>
             <param name="end"></param>
@@ -64,13 +64,13 @@
         </member>
         <member name="M:Diary_Server.Controllers.NotesController.GetStatus">
             <summary>
-            sort for status
+            sort for status. "-" - the event passed but was not executed. "" - the event has not happend.
             </summary>
             <returns></returns>
         </member>
         <member name="M:Diary_Server.Controllers.NotesController.GetRepeat">
             <summary>
-            sort for repeat
+            sort for repeat.
             </summary>
             <returns></returns>
         </member>
@@ -90,6 +90,53 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
+        </member>
+        <member name="T:Diary_Server.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Diary_Server.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Diary_Server.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Diary_Server.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Diary_Server.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Diary_Server.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>

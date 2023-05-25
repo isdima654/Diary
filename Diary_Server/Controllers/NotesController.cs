@@ -89,12 +89,12 @@ namespace Diary_Server.Controllers
                 });
             }
         }
-       /// <summary>
-       /// sort for date
-       /// </summary>
-       /// <param name="start"></param>
-       /// <param name="end"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// sort for date Japon = M.D.Y.
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("filters/date/{start}-{end}")]
         public IActionResult GetDate([FromRoute] DateTime start,[FromRoute] DateTime end)
@@ -115,7 +115,7 @@ namespace Diary_Server.Controllers
         }
 
         /// <summary>
-        /// sort for status
+        /// sort for status. "-" - the event passed but was not executed. "" - the event has not happend.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -129,7 +129,7 @@ namespace Diary_Server.Controllers
                     status = "fail",
                     message = "Session is not valid"
                 });
-            var marks = user.Notes.Where(x => x.Status != null);
+            var marks = user.Notes.Where(x => x.Status != "" && x.Status != "-");
             return Ok(new
             {
                 status = "ok",
@@ -137,7 +137,7 @@ namespace Diary_Server.Controllers
             });
         }
         /// <summary>
-        /// sort for repeat
+        /// sort for repeat.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -151,7 +151,7 @@ namespace Diary_Server.Controllers
                     status = "fail",
                     message = "Session is not valid"
                 });
-            var reset = user.Notes.Where(x => x.Repeat != null);
+            var reset = user.Notes.Where(x => x.Repeat != "{}");
             return Ok(new
             {
                 status = "ok",
